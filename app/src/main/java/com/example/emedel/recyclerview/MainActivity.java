@@ -2,6 +2,7 @@ package com.example.emedel.recyclerview;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -33,6 +34,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this,"Name: " + name + "\nPosition: " + position ,Toast.LENGTH_SHORT).show();
             }
         });
+
+        mRecyclerView.setHasFixedSize(true);
+        mRecyclerView.setItemAnimator(new DefaultItemAnimator());
+
         mRecyclerView.setLayoutManager(mLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
     }
